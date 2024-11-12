@@ -1,0 +1,52 @@
+:root {
+  --primary-color: #2D3436;
+  --secondary-color: #00B894;
+  --accent-color: #FD79A8;
+  --background-color: #F8F9FA;
+  --text-color: #2D3436;
+  --card-background: #FFFFFF;
+  --border-color: #E9ECEF;
+  --hover-color: #00A187;
+  --button-hover-transform: scale(1.05);
+  --button-active-transform: scale(0.98);
+  --button-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--button-transition);
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+button:active::after {
+  width: 200%;
+  height: 200%;
+}
